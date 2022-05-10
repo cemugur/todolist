@@ -205,7 +205,7 @@ ul.list li {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  background-image: url(/images/icon-check.svg?a8fb15d0278c8e312df5fc8364fef863);
+  background-image: url(/imgs/icon-check.svg?a8fb15d0278c8e312df5fc8364fef863);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 10px 10px;
@@ -290,20 +290,20 @@ ul.list li:hover .del {
 
 @media only screen and (min-width: 541px) {
   .light {
-    background-image: url(/images/bg-desktop-light.jpg?3508d620efd5a52bb4ced1338e9bda33);
+    background-image: url(/imgs/bg-desktop-light.jpg?3508d620efd5a52bb4ced1338e9bda33);
   }
 
   .dark {
-    background-image: url(/images/bg-desktop-dark.jpg?73e47dbb723ebc772ef0451f7f908534);
+    background-image: url(/imgs/bg-desktop-dark.jpg?73e47dbb723ebc772ef0451f7f908534);
   }
 }
 @media only screen and (max-width: 540px) {
   .light {
-    background-image: url(/images/bg-mobile-light.jpg?645bd127083ef66fbfb9d348d84ea092);
+    background-image: url(/imgs/bg-mobile-light.jpg?645bd127083ef66fbfb9d348d84ea092);
   }
 
   .dark {
-    background-image: url(/images/bg-mobile-dark.jpg?4b4de43949f46052a146f4b6301afdc4);
+    background-image: url(/imgs/bg-mobile-dark.jpg?4b4de43949f46052a146f4b6301afdc4);
   }
 }
 .light, .dark {
