@@ -1,0 +1,499 @@
+// Responsice scss
+
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+//@import url('https://fonts.google.com/specimen/Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+$breakpointSm: 540px; // 540px
+$breakpointMed: 45em; // 720px
+$breakpointL: 60em; // 960px
+
+
+// fonts
+$fontFamily: 'Josefin Sans';
+$fontWeightLight: 400;
+$fontWeightRegular: 500;
+$fontWeightHeavy: 700;
+$fontSize: 18px;
+$smallFontSize: 14px;
+
+// colors
+
+$brightBlue:hsl(220, 98%, 61%);
+
+///LightTheme
+$veryLightGray:hsl(0,0%,98%);
+$veryLightGrayishBlue:hsl(236,33%,92%);
+$lightGrayishBlue:hsl(233,11%,84%);
+$darkGrayishBlue:hsl(236,9%,61%);
+$veryDarkGrayishBlue:hsl(235,19%,35%);
+
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  
+  @media only screen and (max-width: $breakpointSm) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: $breakpointSm) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: $breakpointMed) {
+    font-size: $fontSize;
+  }
+
+}
+
+* {
+  font-family: $fontFamily;
+  color: $veryDarkGrayishBlue;
+}
+
+// typography
+
+h1 {
+  font-size: 2rem;
+  font-family: $fontFamily;
+  letter-spacing: 1rem;
+  font-weight: $fontWeightHeavy;
+  color: white;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+// header
+
+.header {
+  position: relative;
+  margin-top: 4.4rem;
+  @media only screen and (max-width: $breakpointSm) {
+    margin-top: 3.7rem;
+  }
+}
+.header img {
+  position: absolute;
+  right: 0px;
+  top:0px;
+}
+// form units
+$paddingLeft:1.33rem;
+$listHeight: 3.55rem;
+
+
+.input-area {
+  position: relative;
+  margin-top: 2.5rem;
+  @media only screen and (max-width: $breakpointSm) {
+    margin-top: 3rem;
+   
+  }
+  
+  height: 3.55rem;
+}
+.input-area .dot {
+    position: absolute;
+    left:$paddingLeft;
+    top:1rem;
+    z-index: 100;
+}
+input[type='text'] {
+  @extend .roundedborder;
+  color: $darkGrayishBlue;
+  font-size:1rem;
+  height: $listHeight;
+  width:100%;
+  padding-left: calc($paddingLeft*3);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 999;
+}
+input:focus{
+  outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $lightGrayishBlue;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $lightGrayishBlue;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $lightGrayishBlue;
+}
+// list
+.list-box {
+  @extend .roundedborder;
+  background-color: #fff;
+  margin-top: 1.33rem;
+}
+.list-bottom {
+  font-size: $smallFontSize;
+  color: $darkGrayishBlue;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  @media only screen and (max-width: $breakpointSm) {
+    font-size: 1rem;
+  }
+}
+.list-bottom > div,  .list-bottom > div > span, .all {
+  color: $darkGrayishBlue;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+ul.list li {
+  list-style-type: none;
+  min-height: $listHeight;
+  border-bottom: 1px solid $veryLightGrayishBlue;
+  color: $veryDarkGrayishBlue;
+  padding-left: $paddingLeft;
+  padding-right: $paddingLeft;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;  
+  flex-wrap: wrap;
+  @media only screen and (max-width: $breakpointSm) {
+    min-height: 4.2rem;
+  }
+}
+.dot {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid $lightGrayishBlue;
+  box-sizing: border-box;
+  @media only screen and (max-width: $breakpointSm) {
+    height: 1.66rem;
+    width: 1.66rem;
+  }
+}
+.dot:hover{border: 1px solid lighten(black, 60%);}
+.done .dot {
+  background: $brightBlue;
+  background-image:linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+}
+.checked {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-image: url("../../public/imgs/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 10px 10px;
+}
+ul.list li .txt { 
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  flex-basis: 90%; 
+  padding: 10px 0px 10px 1.1rem;
+  @media only screen and (max-width: $breakpointSm) {
+    flex-basis: 85%; 
+  }
+}
+ul.list li.done .txt { 
+ text-decoration: line-through;
+ color: $lightGrayishBlue;
+}
+.undone > div > .checked { display: none;}
+
+ul.list li .del { 
+  flex:0; height: 1rem; width: 1rem; visibility: hidden;
+  @media only screen and (max-width: $breakpointSm) {
+    visibility: visible;
+  }
+}
+ul.list li:hover .del {
+  //display: block;
+  visibility: visible;
+};
+
+
+.filter {
+  display: flex;
+  justify-content:center ;
+  align-items: center;  
+  flex-wrap: wrap;
+  
+  @extend .roundedborder;
+
+}
+.filter .link {
+  color:$darkGrayishBlue;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  @media only screen and (max-width: $breakpointSm) {
+    font-size: 1.2rem;
+  }
+}
+.filter .link.active {
+  color:$brightBlue
+}
+.filter .link:hover {
+  color:$veryDarkGrayishBlue;
+}
+
+.drag-and-drop-text {
+  margin-top: 2.8rem;
+  color:$darkGrayishBlue;
+  text-align: center;
+  font-size: 1rem;
+
+  @media only screen and (min-width: $breakpointSm) {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 541px) {
+  .light {
+      background-image: url("../../public/imgs/bg-desktop-light.jpg");
+  }
+  .dark {
+      background-image: url("../../public/imgs/bg-desktop-dark.jpg"); 
+  }
+}
+@media only screen and (max-width: 540px) {
+  .light {
+      background-image: url("../../public/imgs/bg-mobile-light.jpg");
+  }
+  .dark {
+      background-image: url("../../public/imgs/bg-mobile-dark.jpg"); 
+  }
+}
+.light, .dark{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.light {
+  background-color: #ffffff;
+  .list-box {
+    @extend .boxshadow;
+  }
+  .filter {
+    background-color: white;
+  }
+}
+
+
+.dark {
+
+  ///DarkTheme
+  $veryDarkBlue:hsl(235,21%,11%);
+  $veryDarkDesaturatedBlue:hsl(235,24%,19%);
+  $lightGrayishBlue:hsl(234,39%,85%);
+  $lightGrayishBlueHover:hsl(236,33%,92%);
+  $darkGrayishBlue:hsl(234,11%,52%);
+  $veryDarkGrayishBlue:hsl(233,14%,35%);
+  $veryveryDarkGrayishBlue:hsl(237,14%,26%);
+
+  background-color: $veryDarkBlue;
+  ul.list li {
+    border-bottom: 1px solid $veryDarkGrayishBlue;
+  }
+  ul.list li .txt{
+    color: $lightGrayishBlue;
+  }
+  ul.list li.done .txt {
+    color: $veryDarkGrayishBlue;
+  }
+  ul.list li:hover .txt{
+    color: $lightGrayishBlueHover;
+  }
+  .list-box, .dot, input[type='text'] {
+    background-color: $veryveryDarkGrayishBlue;
+  }
+  .dot {
+    border: 1px solid #494C6B;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $darkGrayishBlue;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $darkGrayishBlue;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $darkGrayishBlue;
+  }
+
+
+}
+
+// utility
+#confirmoverlay{
+  display: none;
+  opacity: .8;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #FFF;
+  width: 100%;
+  z-index: 10000;
+}
+#confirmbox{
+  display: none;
+  position: fixed;
+  border-radius:7px; 
+  width:90%;
+  max-width: 400px;
+  z-index: 10001;
+  color:#000000;
+}
+#confirmbox > div{ background:#FFF; margin:8px; @extend .roundedborder; @extend .boxshadow}
+#confirmbox > div > .confirmboxbody{ padding:20px;  text-align:center;font-size: 1rem; }
+
+.btn {
+  background-color: $veryDarkGrayishBlue; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  @extend .roundedborder;
+}
+.moon, .sun {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.moon, .sun, .all, .btn:hover {
+  cursor: pointer;
+}
+.btn.danger {
+  color: white;
+  background-color: $veryDarkGrayishBlue; 
+}
+.btn.danger:hover {
+  color: darken($color: white, $amount:10);
+  background-color: $veryDarkGrayishBlue; 
+}
+.btn.primary {
+  color: white;
+  background-color: $brightBlue;
+}
+.roundedborder {
+  border-radius: 0.3em;
+  border: none;
+}
+
+.boxshadow{
+ -webkit-box-shadow: 0px 45px 200px 10px rgba(201, 201, 201, 0.7);
+ -moz-box-shadow: 0px 45px 200px 10px rgba(201, 201, 201, 0.7);
+ box-shadow: 0px 45px 200px 10px rgba(201, 201, 201, 0.7);
+
+}
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: flex;
+}
+.show-sm {
+  display: none;
+}
+
+@media only screen and (max-width: $breakpointSm) {
+  .hidden-sm {
+    display: none;
+  }
+  .show-sm {
+    display: flex;
+  }
+}
+// grid
+
+$width: 96%;
+$gutter: 4%;
+
+.container {
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $breakpointSm;
+}
+$sizes: 12;
+
+@mixin margin-classes {
+  @for $i from 1 through $sizes {
+     $margin: $i * 0.3rem;
+    /* margin #{$margin} */
+    .m-#{$i}  {margin: $margin;}
+    .ml-#{$i} {margin-left: $margin;}
+    .mr-#{$i} {margin-right: $margin;}
+    .mt-#{$i} {margin-top: $margin;}
+    .mb-#{$i} {margin-bottom: $margin;}
+    .mx-#{$i} {margin-left: $margin; margin-right: $margin;}
+    .my-#{$i} {margin-top: $margin; margin-bottom: $margin;}
+  }
+}
+@include margin-classes;
+
+
+@mixin padding-classes {
+  @for $i from 1 through $sizes {
+    $padding: $i * 0.3rem;
+    /* padding #{$padding} */
+    .p-#{$i} {padding: $padding;}
+    .pl-#{$i} {padding-left: $padding;}
+    .pr-#{$i} {padding-right: $padding;}
+    .pt-#{$i} {padding-top: $padding;}
+    .pb-#{$i} {padding-bottom: $padding;}
+    .px-#{$i} {padding-left: $padding; padding-right: $padding;}
+    .py-#{$i} {padding-top: $padding; padding-bottom: $padding;}
+  }
+}
+@include padding-classes;
+
+$sizes:20;
+@mixin font-sizes {
+  @for $i from 1 through $sizes {
+    $size: $i * 0.1rem;
+    .font-size-#{$i} {font-size: $size;}
+  }
+}
+@include font-sizes;
